@@ -1,7 +1,7 @@
 export const messages = [
   {
     id: '1',
-    content: 'You on your way?',
+    content: 'You on your way murray?',
     createdAt: new Date(new Date('1-1-2019').getTime() - 60 * 1000 * 1000),
   },
   {
@@ -28,24 +28,24 @@ export const chats = [
     id: '1',
     name: 'Ethan Gonzalez',
     picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
-    lastMessage: '1',
+    lastMessage: messages.find((m) => m.id === '1'),
   },
   {
     id: '2',
     name: 'Bryan Wallace',
     picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
-    lastMessage: '2',
+    lastMessage: messages.find((m) => m.id === '2'),
   },
   {
     id: '3',
     name: 'Avery Stewart',
     picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg',
-    lastMessage: '3',
+    lastMessage: messages.find((m) => m.id === '3'),
   },
   {
     id: '4',
     name: 'Katie Peterson',
     picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
-    lastMessage: '4',
+    lastMessage: messages.find((m) => m.id === '4'),
   },
 ];
