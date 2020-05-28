@@ -1,7 +1,10 @@
 import express from 'express';
 import { chats } from './db';
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
 
 app.get('/_ping', (req, res) => {
   res.send('pong');
