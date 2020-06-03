@@ -17,5 +17,6 @@ type Chat {
 
 type Query {
     chats: [Chat!]!
+    chat(chatId: ID!): Chat
 }
 
