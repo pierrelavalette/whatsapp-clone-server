@@ -9,6 +9,9 @@ const resolvers = {
     lastMessage(chat: any) {
       return messages.find((m) => m.id === chat.lastMessage);
     },
+    messages(chat: any) {
+      return messages.filter((m) => chat.messages.includes(m.id));
+    },
   },
 
   Query: {
