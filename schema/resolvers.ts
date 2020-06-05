@@ -23,6 +23,33 @@ const resolvers = {
       return chats.find((c) => c.id === chatId);
     },
   },
+  Mutation: {
+    addMessage: function (root: any, { chatId, content }: any) {
+      const chatIndex = chats.findIndex((c) => c.id === chatId);
+
+      if (chatIndex === -1) return null;
+
+      const chat = chats[chatIndex];
+
+      const messageIds = messages.map((currentMessage) =>
+        Number(currentMessage.id)
+      );
+      const messageId = String(Math.max(...messageIds) + 1);
+      const message = {
+        id: messageId,
+        createdAt: new Date(),
+        content,
+      };
+
+      messages.push(message);
+      chat.messages.push(messageId);
+
+      chats.splice(chatIndex, 1);
+      chats.unshift(chat);
+
+      return message;
+    },
+  },
 };
 
 export default resolvers;
