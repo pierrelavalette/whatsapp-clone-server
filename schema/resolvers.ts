@@ -1,6 +1,6 @@
 import { DateTimeResolver, URLResolver } from 'graphql-scalars';
-import { Message, chats, messages } from '../db';
-import { Resolvers } from '../types/graphql';
+import { chats, messages } from '../db';
+import { Resolvers, Message } from '../types/graphql';
 
 const resolvers: Resolvers = {
   Date: DateTimeResolver,
